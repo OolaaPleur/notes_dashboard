@@ -11,8 +11,10 @@ part 'notes_overview_state.dart';
 class NotesOverviewBloc extends Bloc<NotesOverviewEvent, NotesOverviewState> {
   NotesOverviewBloc({required NotesRepository notesRepository})
       : _notesRepository = notesRepository,
-        super(NotesOverviewState()) {
+        super(const NotesOverviewState()) {
     on<NotesOverviewSubscriptionRequested>(_onSubscriptionRequested);
+    on<NotesOverviewNoteDeleted>(_onNoteDeleted);
+    on<NotesOverviewUndoDeletionRequested>(_onUndoDeletionRequested);
   }
 
   final NotesRepository _notesRepository;
@@ -31,5 +33,21 @@ class NotesOverviewBloc extends Bloc<NotesOverviewEvent, NotesOverviewState> {
       onError: (_, __) =>
           state.copyWith(status: () => NotesOverviewStatus.failure),
     );
+  }
+
+  Future<void> _onNoteDeleted(
+      NotesOverviewNoteDeleted event, Emitter<NotesOverviewState> emit) async {
+    emit(state.copyWith(lastDeletedNote: () => event.note));
+    await _notesRepository.deleteNote(event.note.id);
+  }
+
+  Future<void> _onUndoDeletionRequested(
+      NotesOverviewUndoDeletionRequested event,
+      Emitter<NotesOverviewState> emit) async {
+    assert(state.lastDeletedNote != null, 'Last deleted note can not be null.');
+
+    final note = state.lastDeletedNote!;
+    emit(state.copyWith(lastDeletedNote: () => null));
+    await _notesRepository.saveNote(note);
   }
 }

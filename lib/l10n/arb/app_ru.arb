@@ -1,0 +1,44 @@
+{
+  "@@locale": "ru",
+  "notesOverviewAppBarTitle": "Flutter Заметки",
+  "@notesOverviewAppBarTitle": {
+    "description": "Заглавный текст, отображающийся в верхней панели"
+  },
+  "notesOverviewNoteDeletedSnackbarText": "Note \"{noteTitle}\" deleted.",
+  "@notesOverviewNoteDeletedSnackbarText": {
+    "description": "Snackbar text shown when a note is deleted from the Notes Overview Page",
+    "placeholders": {
+      "noteTitle": {
+        "description": "The title of the note that was deleted"
+      }
+    }
+  },
+  "notesOverviewUndoDeletionButtonText": "Отменить",
+  "@notesOverviewUndoDeletionButtonText": {
+    "description": "Button text shown in the snackbar that undoes a deletion of a note"
+  },
+  "notesOverviewErrorSnackbarText": "An error occurred while loading notes.",
+  "@notesOverviewErrorSnackbarText": {
+    "description": "Snackbar text shown when an error occurs while loading notes"
+  },
+  "editNoteTitleLabel": "Заголовок",
+  "@editNoteTitleLabel": {
+    "description": "Label text shown in the title input field of the Note Edit Page"
+  },
+  "editNoteDescriptionLabel": "Описание",
+  "@editNoteDescriptionLabel": {
+    "description": "Label text shown in the description input field of the Note Edit Page"
+  },
+  "notesOverviewEmptyText": "No notes found.",
+  "@notesOverviewEmptyText": {
+    "description": "Text shown in the Notes Overview Page when no notes are found"
+  },
+  "notesOverviewMainScreen": "Главная",
+  "@notesOverviewMainScreen": {
+    "description": "Text shown in the Notes Overview Page describing Main category"
+  },
+  "notesOverviewSecondaryNotes": "Вспомогательное",
+  "@notesOverviewSecondaryNotes": {
+    "description": "Text shown in the Notes Overview Page describing Secondary category"
+  }
+}

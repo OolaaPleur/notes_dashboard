@@ -32,9 +32,5 @@ Future<void> bootstrap({required NotesApi notesApi}) async {
   Bloc.observer = const AppBlocObserver();
 
   final notesRepository = NotesRepository(notesApi: notesApi);
-
-  await runZonedGuarded(
-    () async => runApp(App(notesRepository: notesRepository)),
-    (error, stackTrace) => log(error.toString(), stackTrace: stackTrace),
-  );
+  runApp(App(notesRepository: notesRepository));
 }
