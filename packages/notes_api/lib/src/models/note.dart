@@ -1,9 +1,8 @@
 import 'package:equatable/equatable.dart';
+import 'package:flutter/material.dart';
 import 'package:json_annotation/json_annotation.dart';
-import 'package:meta/meta.dart';
 import 'package:notes_api/src/models/json_map.dart';
 import 'package:uuid/uuid.dart';
-import 'package:flutter/material.dart';
 
 part 'note.g.dart';
 
@@ -52,7 +51,6 @@ class Note extends Equatable {
     String? description,
     int? savedColor
   }) {
-    print("colors is: ${Colors.white.value}");
     return Note(
       id: id ?? this.id,
       title: title ?? this.title,
