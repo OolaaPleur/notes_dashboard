@@ -15,7 +15,7 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   intl: ^0.18.0
-  shared_preferences: ^2.0.15
+  shared_preferences: ^2.1.2
   local_storage_notes_api:
     path: packages/local_storage_notes_api
   notes_api:
