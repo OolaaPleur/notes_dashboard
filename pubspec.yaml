@@ -25,7 +25,7 @@ dependencies:
   flutter_staggered_grid_view: ^0.6.2
 
 dev_dependencies:
-  bloc_test: ^9.1.1
+  bloc_test: ^9.1.4
   flutter_test:
     sdk: flutter
   mockingjay: ^0.3.0
